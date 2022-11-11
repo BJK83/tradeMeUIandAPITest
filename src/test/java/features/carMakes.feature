@@ -4,7 +4,6 @@ Feature: Title of your feature
 
   @carMakesCount
   Scenario: number of named car makes
-    Given I have end points    
+    Given I have basePath "getUsedCars"     
     When I execute Get request
-    Then I have a list of car makes returned
-    And I verify the count of named cars
+    Then I verify the count of named cars in response to be "78"

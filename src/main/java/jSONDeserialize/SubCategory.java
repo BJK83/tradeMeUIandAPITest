@@ -1,18 +1,15 @@
 package jSONDeserialize;
 
-import java.util.ArrayList;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 	
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Category {
+public class SubCategory {
 //	
 //	String name;
 //	String number;
 //	String path;
-//	ArrayList<SubCategory> subcategories;
 //	int count;
 //	boolean IsRestricted;
 //	boolean hasLegalNotice;
@@ -40,12 +37,7 @@ public class Category {
 //	public void setPath(String path) {
 //		this.path = path;
 //	}
-//	public ArrayList<SubCategory> getSubcategories() {
-//		return subcategories;
-//	}
-//	public void setSubcategories(ArrayList<SubCategory> subcategories) {
-//		this.subcategories = subcategories;
-//	}
+//
 //	public int getCount() {
 //		return count;
 //	}
@@ -128,17 +120,6 @@ public void setPath(String path) {
 }
 
 String path;
-
-@JsonProperty("Subcategories")
-public ArrayList<SubCategory> getSubcategories() {
-	return this.subcategories;
-}
-
-public void setSubcategories(ArrayList<SubCategory> subcategories) {
-	this.subcategories = subcategories;
-}
-
-ArrayList<SubCategory> subcategories;
 
 @JsonProperty("HasClassifieds")
 public boolean getHasClassifieds() {
