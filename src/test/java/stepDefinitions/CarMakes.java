@@ -38,6 +38,7 @@ public class CarMakes {
 	@Then("I verify the count of named cars in response to be {string}")
 	public void i_verify_the_count_of_named_cars_in_response_to_be(String expectedNamedCars) {
 		
+		System.out.println("The response count recieved is :"+response.getSubcategories().size());
 		assertEquals(response.getSubcategories().size(), Integer.parseInt(expectedNamedCars));
 	}
 

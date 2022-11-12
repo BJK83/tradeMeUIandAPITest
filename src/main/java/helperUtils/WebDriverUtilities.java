@@ -35,57 +35,49 @@ import java.util.Iterator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WebDriver {
+public class WebDriverUtilities {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
-		ChromeDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-//
-//		javascriptExecutor = (JavascriptExecutor) driver;
-//		ngdriver = new NgWebDriver(javascriptExecutor);
 
 		try {
 			driver.get("https://trademe.co.nz");
-//	ngdriver.waitForAngularRequestsToFinish();
+	
 			driver.manage().window().maximize();
 
-			System.out.println(LocalDateTime.now());
-//			driver.wait(3000);
-			System.out.println(LocalDateTime.now());
-			System.out.println("bhavin");
-
-			driver.findElement(
-					By.cssSelector(".tm-homepage-search-header__vertical-links-list-item [routerlink='/motors']"))
+			driver.findElement(By.cssSelector(".tm-homepage-search-header__vertical-links-list-item [routerlink='/motors']"))
 					.click();
 
 			waiter(driver, "elementToBeClickable", By.cssSelector("button[type='submit']"));
-			int x = driver.findElements(By.cssSelector("tg-select-container[label='Make'] option")).size();
+			
+			// get the count of namedCars
+			int numberOfNamedCarMakes = driver.findElements(By.cssSelector("tg-select-container[label='Make'] option")).size();
 			List<WebElement> myElements = driver
 					.findElements(By.cssSelector("tg-select-container[label='Make'] option"));
 
 			Iterator<WebElement> iterator = myElements.iterator();
 
+// Any make is not a named car, so subtract this from the count
 			while (iterator.hasNext()) {
-				if (iterator.next().getText() == "Any make") {
-					
-					break;
+				if(iterator.next().getText().toString().contentEquals("Any make"))
+				{
+					numberOfNamedCarMakes -=1;
 				}
-
-			}
+			}			
 			
+// Print the total number of named cars
+			System.out.println(numberOfNamedCarMakes);
+			System.out.println(numberOfNamedCarMakes);
 			
-
-			System.out.println(x);
-			System.out.println("after removing item");
-			System.out.println(driver.findElements(By.cssSelector("tg-select-container[label='Make'] option")).size());
-
 //			
 //			new WebDriverWait(driver, Duration.ofSeconds(10))
 //			        .until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']")));			
@@ -93,13 +85,11 @@ public class WebDriver {
 //			new WebDriverWait(driver, Duration.ofSeconds(10))
 //			        .until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']")));
 
-			driver.findElement(By.cssSelector("button[type='submit']")).click();
-
-			String nnn = driver
-					.findElement(
-							By.cssSelector("tm-search-header-result-count .tm-search-header-result-count__heading"))
-					.getText();
-			System.out.println(nnn);
+//			String nnn = driver
+//					.findElement(
+//							By.cssSelector("tm-search-header-result-count .tm-search-header-result-count__heading"))
+//					.getText();
+//			System.out.println(nnn);
 //	ngdriver.waitForAngularRequestsToFinish();
 
 		} catch (Exception e) {
@@ -113,7 +103,7 @@ public class WebDriver {
 
 	}
 
-	public static void waiter(org.openqa.selenium.WebDriver driver, String condition, By by) {
+	public static void waiter(WebDriver driver, String condition, By by) {
 		switch (condition) {
 		case "elementToBeClickable":
 			new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(by));

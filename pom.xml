@@ -7,7 +7,7 @@
 	<artifactId>TradeMeUIandAPITest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>TradeMeUIandAPITest</name>
+	<name>TradeMeUIandAPITestProject</name>
 	<description>A simple TradeMeUIandAPITest.</description>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
@@ -67,6 +67,14 @@
 			<version>1.2</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.picocontainer/picocontainer -->
+		<dependency>
+			<groupId>org.picocontainer</groupId>
+			<artifactId>picocontainer</artifactId>
+			<version>2.15</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -113,10 +121,6 @@
 					<version>3.8.0</version>
 				</plugin>
 				<plugin>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.22.1</version>
-				</plugin>
-				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>3.0.2</version>
 				</plugin>
@@ -131,12 +135,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
-	<reporting>
-		<plugins>
-			<plugin>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</reporting>
 </project>
