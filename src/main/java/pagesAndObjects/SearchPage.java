@@ -32,6 +32,7 @@ public class SearchPage {
 		
 		
 		Common.waitForElement(driver, "elementToBeClickable", searchCarMakeSubmit);
+		Common.waitForElement(driver, "elementToBeClickable", selectedMake);
 
 		// get the count of namedCars
 		int numberOfNamedCarMakes = driver.findElements(namedCarList).size();

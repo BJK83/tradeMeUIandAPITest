@@ -9,7 +9,7 @@ import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import resources.APIEndPoints;
-import static org.junit.Assert.assertEquals;
+import org.testng.Assert;
 
 public class CarMakesAPI {
 	
@@ -38,7 +38,7 @@ public class CarMakesAPI {
 		// we can also capture the response as Rest Assured Response, and then verify for the sub categories size.
 
 		System.out.println("The response count recieved is :"+response.getSubcategories().size());
-		assertEquals(response.getSubcategories().size(), Integer.parseInt(expectedNamedCars));
+		Assert.assertEquals(response.getSubcategories().size(), Integer.parseInt(expectedNamedCars));
 		
 	}
 
