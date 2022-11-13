@@ -46,12 +46,14 @@ Before running the tests:
 
 Running the Tests: Tests can be run in one of the ways below:
 
-		1.  Right click on the test runner file in directory "/TradeMeUIandAPITest/src/test/java/cucumberOptions/TestRunner.java", and run as TestNG Test.
-		Test results for this will be shown in the IDE explorer
+	1.  Right click on the test runner file in directory "/TradeMeUIandAPITest/src/test/java/cucumberOptions/TestRunner.java", and run as TestNG Test.
 
-		2.  Right click on POM.xml, run as => Maven Test
+		Test result report is detailed, and can be accessed in the folder - tradeMeUIandAPITest\test-output. 
+		If this does not show in the IDE project explorer, refresh the project or alternatively look for this folder on the file system under root directory.
 
-		3.  In the IDE terminal, from the root folder - Use "mvn test", or "mvn verify".
+	2.  Right click on POM.xml, run as => Maven Test
 
-		Note: Test result for options 2 and 3 are in the folder: \TradeMeUIandAPITest\target\cucumber-report
+	3.  In the IDE terminal, from the root folder - Use "mvn test", or "mvn verify".
+
+	Note: Test result for options 2 and 3 are in the folder: \TradeMeUIandAPITest\target\cucumber-report
 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="35.743">
+    <testcase classname="Execute get request on trademe sandbox and verify the number of named carMakes" name="number of named car makes" time="1.672">
+        <system-out><![CDATA[Given I have basePath "getUsedCars".........................................passed
+When I execute Get request..................................................passed
+Then I verify the count of named cars in response to be "78"................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="test the car makes and number of listings" name="get the count of listed named cars" time="6.187">
+        <system-out><![CDATA[Given I am on TradeMe home page.............................................passed
+When I click on Motors search...............................................passed
+Then I evaluate count of all named cars "78"................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="test the car makes and number of listings" name="get the count of listings for specific car makes" time="6.477">
+        <system-out><![CDATA[Given I am on TradeMe home page.............................................passed
+When I click on Motors search...............................................passed
+And search for car make "Ferrari"...........................................passed
+Then I evaluate the count of total listings for the "Ferrari"...............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="test the car makes and number of listings" name="get the count of listings for specific car makes 2" time="6.514">
+        <system-out><![CDATA[Given I am on TradeMe home page.............................................passed
+When I click on Motors search...............................................passed
+And search for car make "BMW"...............................................passed
+Then I evaluate the count of total listings for the "BMW"...................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="test the car makes and number of listings" name="get the count of listings for specific car makes 3" time="6.544">
+        <system-out><![CDATA[Given I am on TradeMe home page.............................................passed
+When I click on Motors search...............................................passed
+And search for car make "Mazda".............................................passed
+Then I evaluate the count of total listings for the "Mazda".................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="test the car makes and number of listings" name="get the count of listings for specific car makes 4" time="8.128">
+        <system-out><![CDATA[Given I am on TradeMe home page.............................................passed
+When I click on Motors search...............................................passed
+And search for car make "Honda".............................................passed
+Then I evaluate the count of total listings for the "Honda".................passed
+]]></system-out>
+    </testcase>
+</testsuite>

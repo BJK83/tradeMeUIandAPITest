@@ -1,0 +1,6 @@
+jSONDeserialize\Category.class
+helperUtils\WebDriverUtils.class
+pagesAndObjects\SearchPage.class
+helperUtils\Common.class
+resources\APIEndPoints.class
+resources\UIScenarioContext.class
