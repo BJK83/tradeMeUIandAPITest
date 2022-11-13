@@ -39,10 +39,16 @@ Download and install eclipse (or another IDE like IntelliJ, VS Code). I have use
 	Open this repo in eclipse, and navigate to the root directory, "/TradeMeUIandAPITest"
 
 	Right click on the POM.XML file, Click Maven, Click Update project, or command - "mvn clean install"
+	
 
 Before running the tests:
 
 	Install TestNG runner from eclipse market place - to run the tests as TestNG. Or you can use the Maven run config if you like. Details below.
+	
+	Note: I have used the latest Selenium - 4.6.0, which does not need the webdriver.exe installed as in the previous Selenium versions.
+	
+	Update your chrome browser to the latest stable version.
+
 
 Running the Tests: Tests can be run in one of the ways below:
 
