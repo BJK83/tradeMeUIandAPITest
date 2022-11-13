@@ -3,20 +3,20 @@ package stepDefinitions;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import pagesAndObjects.SearchPage;
+import resources.UIScenarioContext;
 
 public class Hooks {
 
-	SearchPage searchPage = new SearchPage();
+	UIScenarioContext uIScenarioContext = new UIScenarioContext();
 
 	@Before("@UI")
 	public void setup(Scenario scenario) {
 
-		searchPage.setUp();
+		uIScenarioContext.setUp();
 	}
 
 	@After("@UI")
 	public void tearDown(Scenario scenario) {
-		searchPage.tearDown();	
+		uIScenarioContext.tearDown();	
 	}
 }

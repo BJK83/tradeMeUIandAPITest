@@ -13,10 +13,10 @@ public class Common {
 		switch (condition) {
 		case "elementToBeClickable":
 			new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(by));
+//			new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(webElement));
 			break;
 		case "visibilityOf":
-			new WebDriverWait(driver, Duration.ofSeconds(25))
-					.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
+			new WebDriverWait(driver, Duration.ofSeconds(25)).until(ExpectedConditions.visibilityOfElementLocated(by));
 			break;
 		default:
 			Thread.sleep(10000);
@@ -24,5 +24,19 @@ public class Common {
 		}
 
 	}
+	
+	public void clickElement(WebDriver driver, By by) throws InterruptedException {
+		
+		waitForElement(driver,"elementToBeClickable",by);
+		driver.findElement(by).click();
+		
+	}
+//	
+//	public void getText(WebDriver driver, By by) throws InterruptedException {
+//		
+//		waitForElement(driver,"visibilityOf",by);
+//		driver.findElement(by).click();
+//		
+//	}
 
 }
