@@ -12,11 +12,9 @@ import org.openqa.selenium.support.ui.Select;
 public class SearchPage {
 
 	
-//	Common common;
 	
 
 	public static By motorSearch = By.cssSelector(".tm-homepage-search-header__vertical-links-list-item [routerlink='/motors']");
-//	public static By carMake = By.cssSelector("tg-select-container[label='Make'] option");
 	public static By selectedMake = By.cssSelector("[name='selectedMake']");
 	public static By searchCarMakeSubmit = By.cssSelector("button[type='submit']");
 	public static By tradeMeHome = By.cssSelector("tm-search-header-result-count .tm-search-header-result-count__heading");

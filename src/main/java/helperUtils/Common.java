@@ -31,12 +31,5 @@ public class Common {
 		driver.findElement(by).click();
 		
 	}
-//	
-//	public void getText(WebDriver driver, By by) throws InterruptedException {
-//		
-//		waitForElement(driver,"visibilityOf",by);
-//		driver.findElement(by).click();
-//		
-//	}
 
 }

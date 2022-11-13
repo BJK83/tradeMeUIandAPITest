@@ -1,6 +1,5 @@
 @API
-Feature: Title of your feature
-  I want to use this template for my feature file
+Feature: Execute get request on trademe sandbox and verify the number of named carMakes
 
   @carMakesCount
   Scenario: number of named car makes

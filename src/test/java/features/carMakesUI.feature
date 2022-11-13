@@ -7,7 +7,7 @@ Feature: test the car makes and number of listings
     Then I evaluate count of all named cars "78"
 
 
-  Scenario Outline: get the count of listings for specif car makes
+  Scenario Outline: get the count of listings for specific car makes
     Given I am on TradeMe home page
     When I click on Motors search
     And search for car make "<carMake>"
