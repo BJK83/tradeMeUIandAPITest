@@ -2,175 +2,129 @@ package jSONDeserialize;
 
 import java.util.ArrayList;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-	
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Category {
-//	
-//	String name;
-//	String number;
-//	String path;
-//	ArrayList<SubCategory> subcategories;
-//	int count;
-//	boolean IsRestricted;
-//	boolean hasLegalNotice;
-//	boolean hasClassifieds;
-//	int areaOfBusiness;
-//	boolean canHaveSecondCategory;
-//	boolean canBeSecondCategory;
-//	boolean isLeaf;
-//
-//	public String getName() {
-//		return name;
-//	}
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-//	public String getNumber() {
-//		return number;
-//	}
-//	public void setNumber(String number) {
-//		this.number = number;
-//	}
-//	public String getPath() {
-//		return path;
-//	}
-//	public void setPath(String path) {
-//		this.path = path;
-//	}
-//	public ArrayList<SubCategory> getSubcategories() {
-//		return subcategories;
-//	}
-//	public void setSubcategories(ArrayList<SubCategory> subcategories) {
-//		this.subcategories = subcategories;
-//	}
-//	public int getCount() {
-//		return count;
-//	}
-//	public void setCount(int count) {
-//		this.count = count;
-//	}
-//	public boolean isIsRestricted() {
-//		return IsRestricted;
-//	}
-//	public void setIsRestricted(boolean isRestricted) {
-//		IsRestricted = isRestricted;
-//	}
-//	public boolean isHasLegalNotice() {
-//		return hasLegalNotice;
-//	}
-//	public void setHasLegalNotice(boolean hasLegalNotice) {
-//		this.hasLegalNotice = hasLegalNotice;
-//	}
-//	public boolean isHasClassifieds() {
-//		return hasClassifieds;
-//	}
-//	public void setHasClassifieds(boolean hasClassifieds) {
-//		this.hasClassifieds = hasClassifieds;
-//	}
-//	public int getAreaOfBusiness() {
-//		return areaOfBusiness;
-//	}
-//	public void setAreaOfBusiness(int areaOfBusiness) {
-//		this.areaOfBusiness = areaOfBusiness;
-//	}
-//	public boolean isCanHaveSecondCategory() {
-//		return canHaveSecondCategory;
-//	}
-//	public void setCanHaveSecondCategory(boolean canHaveSecondCategory) {
-//		this.canHaveSecondCategory = canHaveSecondCategory;
-//	}
-//	public boolean isCanBeSecondCategory() {
-//		return canBeSecondCategory;
-//	}
-//	public void setCanBeSecondCategory(boolean canBeSecondCategory) {
-//		this.canBeSecondCategory = canBeSecondCategory;
-//	}
-//	public boolean isLeaf() {
-//		return isLeaf;
-//	}
-//	public void setLeaf(boolean isLeaf) {
-//		this.isLeaf = isLeaf;
-//	}
 
+	String name;
+	String number;
+	String path;
+	ArrayList<Category> subcategories;
+	boolean hasClassifieds;
+	int areaOfBusiness;
+	boolean isLeaf;
+	int count;
+	boolean IsRestricted;
+	boolean hasLegalNotice;
+	boolean canHaveSecondCategory;
+	boolean canBeSecondCategory;
 
-@JsonProperty("Name")
-public String getName() {
-	return this.name;
-}
+	@JsonProperty("Name")
+	public String getName() {
+		return name;
+	}
 
-public void setName(String name) {
-	this.name = name;
-}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-String name;
+	@JsonProperty("Number")
+	public String getNumber() {
+		return number;
+	}
 
-@JsonProperty("Number")
-public String getNumber() {
-	return this.number;
-}
+	public void setNumber(String number) {
+		this.number = number;
+	}
 
-public void setNumber(String number) {
-	this.number = number;
-}
+	@JsonProperty("Path")
+	public String getPath() {
+		return path;
+	}
 
-String number;
+	public void setPath(String path) {
+		this.path = path;
+	}
 
-@JsonProperty("Path")
-public String getPath() {
-	return this.path;
-}
+	@JsonProperty("Subcategories")
+	public ArrayList<Category> getSubcategories() {
+		return subcategories;
+	}
 
-public void setPath(String path) {
-	this.path = path;
-}
+	public void setSubcategories(ArrayList<Category> subcategories) {
+		this.subcategories = subcategories;
+	}
 
-String path;
+	@JsonProperty("HasClassifieds")
+	public boolean isHasClassifieds() {
+		return hasClassifieds;
+	}
 
-@JsonProperty("Subcategories")
-public ArrayList<SubCategory> getSubcategories() {
-	return this.subcategories;
-}
+	public void setHasClassifieds(boolean hasClassifieds) {
+		this.hasClassifieds = hasClassifieds;
+	}
 
-public void setSubcategories(ArrayList<SubCategory> subcategories) {
-	this.subcategories = subcategories;
-}
+	@JsonProperty("AreaOfBusiness")
+	public int getAreaOfBusiness() {
+		return areaOfBusiness;
+	}
 
-ArrayList<SubCategory> subcategories;
+	public void setAreaOfBusiness(int areaOfBusiness) {
+		this.areaOfBusiness = areaOfBusiness;
+	}
 
-@JsonProperty("HasClassifieds")
-public boolean getHasClassifieds() {
-	return this.hasClassifieds;
-}
+	@JsonProperty("IsLeaf")
+	public boolean isLeaf() {
+		return isLeaf;
+	}
 
-public void setHasClassifieds(boolean hasClassifieds) {
-	this.hasClassifieds = hasClassifieds;
-}
+	public void setLeaf(boolean isLeaf) {
+		this.isLeaf = isLeaf;
+	}
 
-boolean hasClassifieds;
+	@JsonProperty("Count")
+	public int getCount() {
+		return count;
+	}
 
-@JsonProperty("AreaOfBusiness")
-public int getAreaOfBusiness() {
-	return this.areaOfBusiness;
-}
+	public void setCount(int count) {
+		this.count = count;
+	}
 
-public void setAreaOfBusiness(int areaOfBusiness) {
-	this.areaOfBusiness = areaOfBusiness;
-}
+	@JsonProperty("IsRestricted")
+	public boolean isIsRestricted() {
+		return IsRestricted;
+	}
 
-int areaOfBusiness;
+	public void setIsRestricted(boolean isRestricted) {
+		IsRestricted = isRestricted;
+	}
 
-@JsonProperty("IsLeaf")
-public boolean getIsLeaf() {
-	return this.isLeaf;
-}
+	@JsonProperty("HasLegalNotice")
+	public boolean isHasLegalNotice() {
+		return hasLegalNotice;
+	}
 
-public void setIsLeaf(boolean isLeaf) {
-	this.isLeaf = isLeaf;
-}
+	public void setHasLegalNotice(boolean hasLegalNotice) {
+		this.hasLegalNotice = hasLegalNotice;
+	}
 
-boolean isLeaf;
+	@JsonProperty("CanHaveSecondCategory")
+	public boolean isCanHaveSecondCategory() {
+		return canHaveSecondCategory;
+	}
+
+	public void setCanHaveSecondCategory(boolean canHaveSecondCategory) {
+		this.canHaveSecondCategory = canHaveSecondCategory;
+	}
+
+	@JsonProperty("CanBeSecondCategory")
+	public boolean isCanBeSecondCategory() {
+		return canBeSecondCategory;
+	}
+
+	public void setCanBeSecondCategory(boolean canBeSecondCategory) {
+		this.canBeSecondCategory = canBeSecondCategory;
+	}
 
 }

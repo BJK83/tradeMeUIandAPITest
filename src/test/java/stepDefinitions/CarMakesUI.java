@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.datatable.DataTable;
@@ -80,13 +81,25 @@ public class CarMakesUI {
 	@When("search for car make {string}")
 	public void search_for_car_make_ferrari(String carMake) {
 		// Write code here that turns the phrase above into concrete actions
-		System.out.println("hello When 2");
+
+		waiter(driver, "elementToBeClickable", By.cssSelector("[name='selectedMake']"));
+		Select carMakeList = new Select(driver.findElement(By.cssSelector("[name='selectedMake']")));
+		carMakeList.selectByValue(carMake);
+
+		waiter(driver, "elementToBeClickable", By.cssSelector("button[type='submit']"));
+		driver.findElement(By.cssSelector("button[type='submit']")).click();
+
 	}
 
 	@Then("I evaluate the count of total listings for the {string}")
 	public void i_evaluate_the_count_of_total_listings_for_the_ferrari(String carMake) {
 		// Write code here that turns the phrase above into concrete actions
-		System.out.println("hello Then 2");
+		waiterForElement(driver,
+				By.cssSelector("tm-search-header-result-count .tm-search-header-result-count__heading"));
+		String numebrOfNamedCars = driver
+				.findElement(By.cssSelector("tm-search-header-result-count .tm-search-header-result-count__heading"))
+				.getText();
+		System.out.println("the number of " + carMake + " cars Listed is :" + numebrOfNamedCars);
 	}
 
 	public static void waiter(WebDriver driver, String condition, By by) {
@@ -102,6 +115,13 @@ public class CarMakesUI {
 		default:
 			break;
 		}
+
+	}
+	
+	public static void waiterForElement(WebDriver driver, By by) {
+
+		new WebDriverWait(driver, Duration.ofSeconds(25)).until(ExpectedConditions.visibilityOf(
+				driver.findElement(by)));
 
 	}
 }
