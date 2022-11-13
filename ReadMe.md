@@ -66,5 +66,5 @@ Running the Tests: Tests can be run in one of the ways below:
 
 	4.  In the IDE terminal, from the root folder - Use "mvn test", or "mvn verify".
 
-		Note: Test result for options 3 and 4 are in the folder: \TradeMeUIandAPITest\target\cucumber-report
+		Note: Test result for options 3 and 4 are in the folder: \TradeMeUIandAPITest\target\cucumber-report 
 
