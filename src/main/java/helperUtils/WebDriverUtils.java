@@ -9,12 +9,19 @@ public class WebDriverUtils {
 
 	public static WebDriver driver;
 
-	public WebDriverUtils()
+	public static void setUp()
 	{
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));	
+		driver.get("https://trademe.co.nz");
+
 	}
 	
+	public static void tearDown()
+	{
+		driver.quit();
+
+	}
 	
 }

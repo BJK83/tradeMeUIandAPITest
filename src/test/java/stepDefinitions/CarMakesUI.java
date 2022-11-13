@@ -7,40 +7,40 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import org.junit.Assert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import static helperUtils.WebDriverUtils.driver;
+
+
 
 public class CarMakesUI {
 
-	public static WebDriver driver;
-
-	@Before("@UI")
-	public void setup() {
-
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.manage().window().maximize();
-	}
-
-	@After("@UI")
-	public void tearDown() {
-		driver.quit();
-	}
+//	SearchPage searchPage = new SearchPage();
+	
+//	@Before("@UI")
+//	public void setup(Scenario scenario) {
+//
+////		searchPage = new SearchPage();
+//		searchPage.setUp();
+//	}
+//
+//	@After("@UI")
+//	public void tearDown(Scenario scenario) {
+//		searchPage.tearDown();	
+//	}
 
 	@Given("I am on TradeMe home page")
 	public void i_am_on_trade_me_home_page() {
-		driver.get("https://trademe.co.nz");
 
+		Assert.assertEquals(driver.getCurrentUrl(),"https://www.trademe.co.nz/a/");
+		
 	}
 
 	@When("I click on Motors search")

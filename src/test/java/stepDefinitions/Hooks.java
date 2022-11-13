@@ -1,26 +1,22 @@
 package stepDefinitions;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import pagesAndObjects.SearchPage;
 
 public class Hooks {
 
-//	public static WebDriver driver;
-//
-//	@Before("@UI")
-//	public void setup() {
-//
-//		driver = new ChromeDriver();
-//
-//	}
-//
-//	
-//	@After("@UI")
-//	public void tearDown()
-//	{
-//		driver.quit();
-//	}
+	SearchPage searchPage = new SearchPage();
+
+	@Before("@UI")
+	public void setup(Scenario scenario) {
+
+		searchPage.setUp();
+	}
+
+	@After("@UI")
+	public void tearDown(Scenario scenario) {
+		searchPage.tearDown();	
+	}
 }
