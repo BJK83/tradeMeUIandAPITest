@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="TestSuite" verbose="2" annotations="JDK" parallel="classes">
-    <test name="UIAndAPIAutomationTests" >
-        <classes>
-            <class name="cucumberOptions.TestRunner" />
-        </classes>
-    </test>
-
-</suite>
